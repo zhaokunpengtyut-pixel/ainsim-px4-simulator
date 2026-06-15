@@ -1,0 +1,24 @@
+安装说明1：
+px4的包里面有一些路径信息，因此大家在安装wsl创建用户名的时候就用hw这个名字，和我的一样。px4解压缩的路径也和我保持一样，这样能省事很多。如果你已经用了其他的用户名，如果方便的话建议把wsl卸载了重新装，反正也快。如果不方面则可以在wsl中增加一个名为hw的用户，并给sudo权限，然后切换到这个用户来继续安装px4。如果还是想用自己的用户名，那么进入px4后，先make clean和make distclean之后再编译，不过这样会删除很多已经下载好的东西，速度会慢很多，也很可能会出错。
+2025-04-05 23:31
+
+安装说明2：
+如果刚编译AirmSIM就报错，可以尝试升级cmake到4.0版本，可以到cmake的官网下载
+
+
+安装PX4之前的命令：
+sudo apt update
+sudo apt install -y pip libpulse-mainloop-glib0 zip
+pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+pip config set global.trusted-host mirrors.aliyun.com
+echo 'export PATH=/home/hw/.local/bin:$PATH' >> ~/.bashrc
+echo 'export LIBGL_ALWAYS_SOFTWARE=1' >> ~/.bashrc
+echo 'export DISPLAY=:0' >> ~/.bashrc
+
+PX4连接airsim之前的配置，注意IP地址改成自己WINDOWS的地址，如果连不上关闭WINDOWS的防火墙或者打开4560,10049端口。
+echo 'export PX4_SIM_HOST_ADDR=172.31.48.1' >> ~/.bashrc
+source ~/.bashrc
+sudo ufw allow 4560
+sudo ufw allow 10049
+
+

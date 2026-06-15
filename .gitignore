@@ -1,0 +1,53 @@
+# Large binaries and build outputs
+AirSim-1.8.1-windows/
+CityParkEnvironmentCollec/
+*.zip
+*.exe
+*.AppImage
+*.msi
+*.appx
+
+# PX4 build artifacts
+Firmware/
+px4v1.15.2/
+**/build/px4_sitl_default/
+**/build/px4_fmu-v3/
+
+# Logs
+*.log
+px4_output.log
+screen_log.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.sln
+*.suo
+
+# Simulation outputs
+**/log/
+**/dataman
+**/parameters*.bson
+**/eeprom
+
+# UE4
+DerivedDataCache/
+Intermediate/
+Saved/
+Binaries/
+*.uproject
+*.sln
